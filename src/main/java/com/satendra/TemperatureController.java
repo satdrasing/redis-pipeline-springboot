@@ -20,7 +20,7 @@ public class TemperatureController {
 
     private final StringRedisTemplate redisTemplate;
 
-    private final TempratureService tempratureService;
+    private final TemperatureService temperatureService;
 
 
     @GetMapping("/temp-all")
@@ -41,7 +41,7 @@ public class TemperatureController {
 
     @PostMapping("/temp")
     public void insertTemperature(@RequestBody TemperatureData temperature) {
-        tempratureService.insert(temperature);
+        temperatureService.insert(temperature);
 
     }
 

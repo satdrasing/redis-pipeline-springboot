@@ -1,24 +1,22 @@
 package com.satendra;
 
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.util.UUID;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.UUID;
+
 @Service
-public class TempratureService {
+@RequiredArgsConstructor
+public class TemperatureService {
 
-	// @Autowired
-	// private RedisTemplate<String, Object> template;
 
-	@Autowired
-	private StringRedisTemplate redisTemplate;
+	private final StringRedisTemplate redisTemplate;
 
 	public void insert( TemperatureData temperatureData) {
 
